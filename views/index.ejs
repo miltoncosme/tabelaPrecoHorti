@@ -83,6 +83,7 @@
                                         <div class="row">
 
                                             <!-- statustic-card start -->
+                                           
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="card bg-c-yellow text-white">
                                                     <div class="card-block">
@@ -284,11 +285,15 @@
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 
 <script>
-    function startTime() {      
-      document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
-      var t = setTimeout(startTime, 5000);
+    $(document).ready(function() {
+        setInterval(function() {
+            cache_clear()
+        }, 5000);
+    });
+
+    function cache_clear() {
+        window.location.reload(false);
     }
-   
 </script>
 
 </body>
