@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <title>Adminty - Lista de produtos hortifruti </title>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="#">
+    <meta name="keywords" content="Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="#">
+   
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   
+    <!-- radial chart.css -->
+    <link rel="stylesheet" href="..\files\assets\pages\chart\radial\css\radial.css" type="text/css" media="all">
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="..\files\assets\icon\feather\css\feather.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="..\files\assets\css\style.css">
+    <link rel="stylesheet" type="text/css" href="..\files\assets\css\jquery.mCustomScrollbar.css">
+</head>
+<!-- Menu sidebar static layout -->
+
+<body onload="startTime()">
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">        
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-container container-fluid"> 
+                    </div>
+                </div>
+            </nav>
+            <div class="pcoded-main-container">                                  
+                    <div >
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+                                        <div class="row">
+
+                                            <!-- statustic-card start -->
+                                            <div class="col-xl-3 col-md-6">
+                                                <div class="card bg-c-yellow text-white">
+                                                    <div class="card-block">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <% if(dados.length > 0){ %>
+                                                                    <p class="m-b-5"> <%- dados[0].DESCRICAO %> </p>
+                                                                    <h4 class="m-b-0">R$ <%- dados[0].VENDA.toFixed(2).replace('.',',') %> </h4>
+                                                                <% } else{ %>  
+                                                                    <p class="m-b-5"> - </p>
+                                                                    <h4 class="m-b-0">R$ 0,00 </h4>
+                                                                <% } %>
+                                                            </div>                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-md-6">
+                                                <div class="card bg-c-green text-white">
+                                                    <div class="card-block">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <% if(dados.length > 1){ %>
+                                                                    <p class="m-b-5"> <%- dados[1].DESCRICAO %> </p>
+                                                                    <h4 class="m-b-0">R$ <%- dados[1].VENDA.toFixed(2).replace('.',',') %> </h4>
+                                                                <% } else{ %>  
+                                                                    <p class="m-b-5"> - </p>
+                                                                    <h4 class="m-b-0">R$ 0,00 </h4>
+                                                                <% } %>
+                                                            </div>                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                            <div class="col-xl-3 col-md-6">
+                                                <div class="card bg-c-blue text-white">
+                                                    <div class="card-block">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <% if(dados.length > 2){ %>
+                                                                    <p class="m-b-5"> <%- dados[2].DESCRICAO %> </p>
+                                                                    <h4 class="m-b-0">R$ <%- dados[2].VENDA.toFixed(2).replace('.',',') %> </h4>
+                                                                <% } else{ %>  
+                                                                    <p class="m-b-5"> - </p>
+                                                                    <h4 class="m-b-0">R$ 0,00 </h4>
+                                                                <% } %>
+                                                            </div>                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-md-6">
+                                                <div class="card bg-c-pink text-white">
+                                                    <div class="card-block">
+                                                        <div class="row align-items-center">
+                                                            <div class="col">
+                                                                <% if(dados.length > 3){ %>
+                                                                    <p class="m-b-5"> <%- dados[3].DESCRICAO %> </p>
+                                                                    <h4 class="m-b-0">R$ <%- dados[3].VENDA.toFixed(2).replace('.',',') %> </h4>
+                                                                <% } else{ %>  
+                                                                    <p class="m-b-5"> - </p>
+                                                                    <h4 class="m-b-0">R$ 0,00 </h4>
+                                                                <% } %>
+                                                            </div>                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- statustic-card start -->
+
+                                            <!-- ticket and update start -->
+                                            <div class="col-xl-4">
+                                                <div class="card table-card">                                                    
+                                                    <div class="card-block">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover table-borderless">
+                                                                <thead>
+                                                                    <tr>       
+                                                                        <th>Código</th>                                                                 
+                                                                        <th>Descrição</th>                                                                        
+                                                                        <th>Preço</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                  <% for (let i = 4; i < dados.length; i++) { %>
+                                                                    <tr>
+                                                                      <td><%= dados[i].COD_PRODUTO %></td>
+                                                                      <td><%= dados[i].DESCRICAO %></td>
+                                                                      <td><%= dados[i].VENDA.toFixed(2).replace('.',',') %></td>
+                                                                    </tr>
+                                                                    <% if(i>12) { %>
+                                                                        <% break %>
+                                                                    <% } %>
+                                                                  <% }; %>                                                                    
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <div class="card table-card">                                                    
+                                                    <div class="card-block">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover table-borderless">
+                                                                <thead>
+                                                                    <tr>       
+                                                                        <th>Código</th>                                                                 
+                                                                        <th>Descrição</th>                                                                        
+                                                                        <th>Preço</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                  <% for (let i = 14; i < dados.length; i++) { %>
+                                                                    <tr>
+                                                                      <td><%= dados[i].COD_PRODUTO %></td>
+                                                                      <td><%= dados[i].DESCRICAO %></td>
+                                                                      <td><%= dados[i].VENDA.toFixed(2).replace('.',',') %></td>
+                                                                    </tr>
+                                                                    <% if(i>22) { %>
+                                                                        <% break %>
+                                                                    <% } %>
+                                                                  <% }; %>                                                                    
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4">
+                                                <div class="card table-card">                                                    
+                                                    <div class="card-block">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-hover table-borderless">
+                                                                <thead>
+                                                                    <tr>       
+                                                                        <th>Código</th>                                                                 
+                                                                        <th>Descrição</th>                                                                        
+                                                                        <th>Preço</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                  <% for (let i = 24; i < dados.length; i++) { %>
+                                                                    <tr>
+                                                                      <td><%= dados[i].COD_PRODUTO %></td>
+                                                                      <td><%= dados[i].DESCRICAO %></td>
+                                                                      <td><%= dados[i].VENDA.toFixed(2).replace('.',',') %></td>
+                                                                    </tr>
+                                                                    <% if(i>32) { %>
+                                                                        <% break %>
+                                                                    <% } %>
+                                                                  <% }; %>                                                                    
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="..\files\bower_components\jquery\js\jquery.min.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\jquery-ui\js\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\popper.js\js\popper.min.js"></script>
+   
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="..\files\bower_components\jquery-slimscroll\js\jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="..\files\bower_components\modernizr\js\modernizr.js"></script>
+    <script type="text/javascript" src="..\files\bower_components\modernizr\js\css-scrollbars.js"></script>
+
+    <!-- Google map js -->
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+   
+    <!-- gauge js -->
+    <script src="..\files\assets\pages\widget\gauge\gauge.min.js"></script>
+    <script src="..\files\assets\pages\widget\amchart\amcharts.js"></script>
+    <script src="..\files\assets\pages\widget\amchart\serial.js"></script>
+    <script src="..\files\assets\pages\widget\amchart\gauge.js"></script>
+    <script src="..\files\assets\pages\widget\amchart\pie.js"></script>
+    <script src="..\files\assets\pages\widget\amchart\light.js"></script>
+    <!-- Custom js -->
+    <script src="..\files\assets\js\pcoded.min.js"></script>
+    <script src="..\files\assets\js\vartical-layout.min.js"></script>
+    <script src="..\files\assets\js\jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="..\files\assets\pages\dashboard\crm-dashboard.min.js"></script>
+    <script type="text/javascript" src="..\files\assets\js\script.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
+<script>
+    function startTime() {      
+      document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+      var t = setTimeout(startTime, 5000);
+    }
+   
+</script>
+
+</body>
+
+</html>
