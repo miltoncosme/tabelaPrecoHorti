@@ -31,7 +31,7 @@ router.get('/', function(req, res) {
       }
       let qry = `select cast(cod_produto as varchar(14)) cod_produto,
                   left(cast(descricao as varchar(100) character set WIN1252), 26) as descricao,
-                  venda from produto where inativo='A' and balanca='S'  ${filter} order by descricao
+                  venda from produto where inativo='A' and balanca='S' ${filter} order by descricao
                   rows ${(req.session.pag*iTam)-(iTam-1)} to ${iTam*req.session.pag}`;
       console.log(qry)
       return pool.query(qry);

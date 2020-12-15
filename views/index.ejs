@@ -277,7 +277,7 @@
                                                                     <% }; %>
                                                                       <td><%= dados[i].COD_PRODUTO %></td>
                                                                       <td><%= dados[i].DESCRICAO %></td>
-                                                                      <td><%= dados[i].VENDA.toFixed(2).replace('.',',') %></td>
+                                                                      <td> R$ <%= dados[i].VENDA.toFixed(2).replace('.',',') %></td>
                                                                     </tr>
                                                                     <% if(i>11) { %>
                                                                         <% break %>
