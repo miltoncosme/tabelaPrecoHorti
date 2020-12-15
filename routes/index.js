@@ -2,33 +2,43 @@ var express = require('express');
 var router = express.Router();
 const Pool = require('./exec');
 require('dotenv-safe').config();
-var pag = 0;
+const iTam = 12;
 
 /* GET home page. */
 router.get('/', function(req, res) {
   const pool = new Pool();  
-  pool.query(`select count(*) from produto where inativo='A' and balanca='S'`)
+  var max;
+  var filter="";
+  if (process.env.FILTER_GRUPO>0){
+    filter= ` and cod_grupo=${process.env.FILTER_GRUPO} `
+  }
+  if(req.session.pag) {
+    //
+  } else {
+    req.session.pag=0;
+  }
+  pool.query(`select count(*) from produto where inativo='A' and balanca='S' ${filter}`)
     .then(con=>{
       let count = con[0].COUNT;
-      let max = Math.ceil(count / 34);
+      max = Math.ceil(count / iTam);
       console.log('max', max);
-      console.log('pag', pag);
-      if (pag===max) {
-        pag=1
-        console.log('(pag=max)')        
+      console.log('req.session.pag', req.session.pag);
+      if (req.session.pag===max) {
+        req.session.pag=1
+        console.log('(req.session.pag=max)')        
       } else {
-        pag = pag + 1;
+        ++req.session.pag;
       }
-      let qry = `select cast(cod_produto as varchar(14) character set WIN1250)  cod_produto,
-                  left(cast(descricao as varchar(100) character set WIN1250), 26) as descricao,
-                  venda from produto where inativo='A' and balanca='S' order by descricao
-                  rows ${(pag*34)-33} to 34*${pag}`;
+      let qry = `select cast(cod_produto as varchar(14)) cod_produto,
+                  left(cast(descricao as varchar(100) character set WIN1252), 26) as descricao,
+                  venda from produto where inativo='A' and balanca='S'  ${filter} order by descricao
+                  rows ${(req.session.pag*iTam)-(iTam-1)} to ${iTam*req.session.pag}`;
       console.log(qry)
       return pool.query(qry);
     })  
     .then(con=>{     
       console.log(con)
-      res.render('index', { title: 'Express', dados:con });
+      res.render('index', { title: 'Express', dados:con, pag:req.session.pag, max });
     })
     .catch(err=>{
       console.log(err.message)
